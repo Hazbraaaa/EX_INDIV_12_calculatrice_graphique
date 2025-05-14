@@ -11,40 +11,6 @@ function printKey(value) {
     dial.value = dialCurrentContent;
 }
 
-function add(str) {
-    let addition = str.split("+");
-    let addResult = 0;
-
-    addition.forEach(element => {
-        if (element.includes("-")) {
-            addResult += Number(subtract(element));
-        }
-        else {
-            addResult += Number(element);
-        }
-    });
-    return addResult;
-}
-
-function subtract(str) {
-    let subtraction = str.split("-");
-    let subResult = 0;
-
-    subtraction.forEach(element => {
-        subResult += Number(element);
-    });
-    subResult -= 2*subtraction[0];
-    return -subResult;
-}
-
-function calculate() {
-    let result = 0;
-
-    result = add(dialCurrentContent);
-
-    dial.value = result;
-}
-
 function clearDial() {
     dialCurrentContent = " ";
     dial.value = dialCurrentContent;
@@ -53,6 +19,35 @@ function clearDial() {
 function deleteKey() {
     dialCurrentContent = dialCurrentContent.slice(0, -1);
     dial.value = dialCurrentContent;
+}
+
+function add(str) {
+    let splitAdd = str.split("+");
+    let addResult = 0;
+
+    splitAdd.forEach(element => {
+        if (element.includes("-")) {
+            addResult += sub(element);
+        }
+        else {
+            addResult += Number(element);
+        }
+    });
+    return addResult;
+}
+
+function sub(str) {
+    let splitSub = str.split("-").map(Number);
+    let subResult = splitSub.slice(1).reduce((accumul, current) => accumul - current, splitSub[0]);
+
+    return subResult;
+}
+
+function calculate() {
+    let result = 0;
+
+    result = add(dialCurrentContent);
+    dial.value = result.toFixed(2);
 }
 
 

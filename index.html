@@ -14,12 +14,16 @@
 <body>
     <div class="container btn btn-dark">
         <div class="row">
+            <div class="col brand">CASIO</div>
+            <div class="col model">ch-91</div>
+        </div>
+        <div class="row">
             <input type="text" class="dial btn btn-light" value="">
         </div>
         <div class="row">
-            <input type="button" class="btn btn-success" value="AC" onclick="clearDial()">
-            <input type="button" class="btn btn-success" value="%">
-            <input type="button" class="btn btn-success" value="Del" onclick="deleteKey()">
+            <input type="button" class="btn btn-danger" value="AC" onclick="clearDial()">
+            <input type="button" class="btn btn-danger" value="Del" onclick="deleteKey()">
+            <input type="button" class="btn btn-success" value="%" onclick="printKey(value)">
             <input type="button" class="btn btn-success" value="/" onclick="printKey(value)">
         </div>
         <div class="row">
@@ -43,8 +47,8 @@
         <div class="row">
             <input type="button" class="btn btn-light" value="00" onclick="printKey(value)">
             <input type="button" class="btn btn-light" value="0" onclick="printKey(value)">
-            <input type="button" class="btn btn-light" value="," onclick="printKey(value)">
-            <input type="button" class="btn btn-danger" value="=" onclick="calculate()">
+            <input type="button" class="btn btn-light" value="." onclick="printKey(value)">
+            <input type="button" class="btn btn-primary" value="=" onclick="calculate()">
         </div>
     </div>
 

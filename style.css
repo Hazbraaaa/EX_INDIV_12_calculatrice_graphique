@@ -15,6 +15,14 @@ body {
     text-align: right;
 }
 
+.brand {
+    text-align: left;
+}
+
+.model {
+    text-align: right;
+}
+
 input {
     margin: 0.5rem;
     min-width: 3rem;
