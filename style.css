@@ -1,0 +1,21 @@
+@import url(reset.css);
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    max-width: fit-content;
+    margin: 1rem;
+}
+
+.dial {
+    width: 100%;
+    text-align: right;
+}
+
+input {
+    margin: 0.5rem;
+    min-width: 3rem;
+}
