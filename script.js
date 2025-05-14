@@ -11,20 +11,37 @@ function printKey(value) {
     dial.value = dialCurrentContent;
 }
 
-function calculate() {
-    let result = 0;
-    let addition = dialCurrentContent.split("+");
+function add(str) {
+    let addition = str.split("+");
+    let addResult = 0;
 
     addition.forEach(element => {
         if (element.includes("-")) {
-            let substraction = element.split("-");
-            
-            result += Number(substraction[0]-substraction[1]);
+            addResult += Number(subtract(element));
         }
         else {
-            result += Number(element);
+            addResult += Number(element);
         }
     });
+    return addResult;
+}
+
+function subtract(str) {
+    let subtraction = str.split("-");
+    let subResult = 0;
+
+    subtraction.forEach(element => {
+        subResult += Number(element);
+    });
+    subResult -= 2*subtraction[0];
+    return -subResult;
+}
+
+function calculate() {
+    let result = 0;
+
+    result = add(dialCurrentContent);
+
     dial.value = result;
 }
 
